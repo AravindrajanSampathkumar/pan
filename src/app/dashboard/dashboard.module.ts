@@ -8,7 +8,7 @@ import { MatCardModule} from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { DialogPopupComponent } from '../dialog-popup/dialog-popup.component';
-
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -22,6 +22,7 @@ import { DialogPopupComponent } from '../dialog-popup/dialog-popup.component';
     MatCardModule,
     MatToolbarModule,
     MatButtonModule,
+    MatIconModule
   ]
 })
 export class DashboardModule { }

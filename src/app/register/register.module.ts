@@ -24,7 +24,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatOptionModule } from '@angular/material/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -55,6 +55,7 @@ import { FormsModule } from '@angular/forms';
     MatMenuModule,
     MatSlideToggleModule,
     MatOptionModule,
+    ReactiveFormsModule
   ]
 })
 export class RegisterModule { }

@@ -33,4 +33,8 @@ export class LoginComponent implements OnInit, OnDestroy {
     console.log('loginForm===============', this.loginForm.value);
     this.router.navigate(['/dashboard']);
   }
+
+  navigateBack(){
+  this.router.navigate(['/']);
+  }
 }

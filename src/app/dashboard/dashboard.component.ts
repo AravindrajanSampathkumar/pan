@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 
 @Component({
@@ -8,12 +9,15 @@ import { AuthService } from '../auth.service';
 })
 export class DashboardComponent implements OnInit, OnDestroy {
 
-  constructor(public authService: AuthService) { }
+  constructor(public authService: AuthService,private router: Router) { }
 
   ngOnInit(): void {    
     this.authService.userIsLoggedIn.next(true);
   }
 
+  navigateBack(){
+    this.router.navigate(['/login']);
+  }
 
    ngOnDestroy(): void {
     this.authService.userIsLoggedIn.next(false);
