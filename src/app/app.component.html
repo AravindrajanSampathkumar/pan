@@ -1,6 +1,6 @@
-<ng-container *ngIf="showHomeScreen">
+<ng-container *ngIf="!userIsLoggedIn">
 <p class="header-bar">
-  <mat-toolbar color="primary">
+  <!-- <mat-toolbar color="primary">
     <mat-toolbar-row>
       <span>Pan Application</span>
       <span class="example-spacer"></span>
@@ -9,7 +9,16 @@
       </button>
     </mat-toolbar-row>
   </mat-toolbar>
-</p>
+</p> -->
+
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+     <span><a href="/">HOME</a></span>
+     <span class="spacer"></span>
+     <a  mat-button  routerLink="/register">register</a>
+     <a  mat-button  routerLink="/login">Login</a>
+  </mat-toolbar-row>
+  </mat-toolbar>
 
 <div fxFlexFill class="example-container">
   <div fxLayout="column" fxLayoutGap="32px" [style.height]="'100%'">
