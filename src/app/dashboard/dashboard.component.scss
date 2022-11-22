@@ -20,7 +20,12 @@ mat-card {
 
 mat-card:hover {
     background: #673ab7;
+    cursor: pointer;
 }
+
+mat-icon{
+    cursor: pointer;
+  }
 
 :host {
     ::ng-deep {
