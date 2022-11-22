@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { AuthService } from './auth.service';
@@ -12,17 +12,17 @@ export class AppComponent implements OnInit, OnDestroy {
   title = 'pan';
   subscriptions = new Subscription();
   userIsLoggedIn = false;
-  constructor(public router: Router, public authService: AuthService) {
-
-  }
+  constructor(public router: Router, public authService: AuthService, public cd: ChangeDetectorRef) {  }
 
   ngOnInit() {
-    this.authService.userIsLoggedIn.subscribe((val:any)=>{
-      this.userIsLoggedIn = val;      
-    console.log('userIsLoggedIn==========',this.userIsLoggedIn)
+    this.authService.userIsLoggedIn.subscribe((val: any) => {
+      this.userIsLoggedIn = val;
+      console.log('userIsLoggedIn==========', this.userIsLoggedIn)
     });
   }
-
+  ngAfterViewChecked() {
+    this.cd.detectChanges();
+  }
   login() {
     this.router.navigate(['/login']);
   }
