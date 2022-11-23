@@ -23,9 +23,12 @@ mat-card:hover {
     cursor: pointer;
 }
 
-mat-icon{
+mat-icon {
     cursor: pointer;
-  }
+}
+.req-img{
+    font-size:40px;
+}
 
 :host {
     ::ng-deep {
@@ -37,8 +40,15 @@ mat-icon{
 
 .example-spacer {
     flex: 1 1 auto;
-  }
+}
 
-  .lable-padding{
+.lable-padding {
     padding: 0 14px;
-  }
+}
+
+mat-list-item {
+    align-items: center;
+    justify-content: center;
+    display: flex !important;
+}
+

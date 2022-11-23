@@ -1,20 +1,20 @@
 import { HttpClient, HttpErrorResponse, HttpResponse } from '@angular/common/http';
 import { Injectable, OnDestroy } from '@angular/core';
-import { of, Subject, Subscription} from 'rxjs';
-import { catchError,switchMap } from 'rxjs/operators';
+import { of, Subject, Subscription } from 'rxjs';
+import { catchError, map, switchMap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
-export class LoginService implements OnDestroy{
+export class LoginService implements OnDestroy {
   public postDiscoveryRule$ = new Subject();
   private _postDiscoveryRule = new Subject();
 
-public get postDiscoveryRuleResponse() {
-  return this._postDiscoveryRule.asObservable();
-}
+  public get postDiscoveryRuleResponse() {
+    return this._postDiscoveryRule.asObservable();
+  }
   subscriptions = new Subscription();
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient) {
     this.subscriptions.add(
       this.postDiscoveryRule$
         .pipe(
@@ -34,7 +34,7 @@ public get postDiscoveryRuleResponse() {
               );
           })
         )
-        .subscribe((res:any) => {
+        .subscribe((res: any) => {
           if (res.status === 200) {
             this._postDiscoveryRule.next({
               successStatus: true,
@@ -49,7 +49,30 @@ public get postDiscoveryRuleResponse() {
         })
     );
   }
-  
+
+  authenticate(username: any, password: any) {
+    return this.http
+      .post<any>("http://localhost:8080/authenticate", { username, password })
+      .pipe(
+        map(userData => {
+          sessionStorage.setItem("username", username);
+          let tokenStr = "Bearer " + userData.token;
+          sessionStorage.setItem("token", tokenStr);
+          return userData;
+        })
+      );
+  }
+
+  isUserLoggedIn() {
+    let user = sessionStorage.getItem("username");
+    console.log(!(user === null));
+    return !(user === null);
+  }
+
+  logOut() {
+    sessionStorage.removeItem("username");
+  }
+
   ngOnDestroy() {
     this.subscriptions.unsubscribe();
   }

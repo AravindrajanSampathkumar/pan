@@ -1,7 +1,7 @@
 import { Router } from '@angular/router';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
-import { AuthService } from '../auth.service';
+import { AuthService } from '../service/auth.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({

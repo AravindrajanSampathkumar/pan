@@ -1,18 +1,19 @@
 import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
+import { AuthGuardService } from './service/AuthGuard.service';
 
 const routes: Routes = [
   {
     path: '', redirectTo: '/', pathMatch: 'full'
   },
   {
-    path: 'login', loadChildren: () => import('./login/login.module').then(m => m.LoginModule)
+    path: 'login', loadChildren: () => import('./login/login.module').then(m => m.LoginModule),canActivate:[AuthGuardService]
   },
   {
-    path: 'dashboard', loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule)
+    path: 'dashboard', loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule),canActivate:[AuthGuardService]
   },
-  { path: 'register', loadChildren: () => import('./register/register.module').then(m => m.RegisterModule) },
+  { path: 'register', loadChildren: () => import('./register/register.module').then(m => m.RegisterModule),canActivate:[AuthGuardService] },
 ];
 
 @NgModule({
