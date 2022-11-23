@@ -1,13 +1,21 @@
 <mat-toolbar color="primary">
+  <mat-toolbar-row>
   <mat-icon (click)="navigateBack()">arrow_back_ios</mat-icon>
   <span>Dashboard</span>
+  <span class="example-spacer"></span>
+  <span class="labl-one lable-padding">Agent code : 10101</span>
+  <span class="labl-two lable-padding">Agent Name : Aravind</span>
+  <span class="labl-three lable-padding">Login Time : {{timer}}</span>
+
+</mat-toolbar-row>
 </mat-toolbar>
   <div class="content">
         <div fxLayout="row" style="height: 75px; width: 100%;">
             <!-- Column-2 Row-2-->
             <div fxLayout="row" fxFlex="100" fxFlexFill  fxLayoutAlign="space-around strech">
               <div fxFlex="30" fxLayoutAlign="center center">    
-                <mat-card class="mat-elevation-z4" >
+                <mat-card class="mat-elevation-z4" (click)="navigateRegisterPage()">                  
+                  <mat-icon>person_add</mat-icon>
                 <mat-card-header>
                   <mat-card-title>New Request</mat-card-title>
                 </mat-card-header>
@@ -23,7 +31,8 @@
               </mat-card>
             </div>
               <div fxFlex="30" fxLayoutAlign="center center">
-                <mat-card class="mat-elevation-z4">
+                <mat-card class="mat-elevation-z4">                  
+                  <mat-icon>pageview</mat-icon>
                     <mat-card-header>
                       <mat-card-title>View Status</mat-card-title>
                     </mat-card-header>
@@ -31,6 +40,7 @@
                 </div>
               <div fxFlex="30" fxLayoutAlign="center center">
                 <mat-card class="mat-elevation-z4">
+                  <mat-icon>update</mat-icon>
                     <mat-card-header>
                       <mat-card-title>Update Existing Request</mat-card-title>
                     </mat-card-header>

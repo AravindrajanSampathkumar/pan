@@ -13,7 +13,8 @@ import {MatIconModule} from '@angular/material/icon';
 @NgModule({
   declarations: [
     DashboardComponent,
-    DialogPopupComponent
+    DialogPopupComponent,
+  
   ],
   imports: [
     CommonModule,

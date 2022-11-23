@@ -8,18 +8,25 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit, OnDestroy {
+  timer: any
+  constructor(public authService: AuthService, private router: Router) { }
 
-  constructor(public authService: AuthService,private router: Router) { }
-
-  ngOnInit(): void {    
+  ngOnInit(): void {
     this.authService.userIsLoggedIn.next(true);
+    this.authService.countDownValue.subscribe((val) => {
+      console.log('val========', val)
+      this.timer = val;
+    })
   }
 
-  navigateBack(){
-    this.router.navigate(['/login']);
+  navigateBack() {
+    this.router.navigate(['/']);
   }
 
-   ngOnDestroy(): void {
+  navigateRegisterPage() {
+    this.router.navigate(['/register', { page: 'DashboardPage' }]);
+  }
+  ngOnDestroy(): void {
     this.authService.userIsLoggedIn.next(false);
   }
 

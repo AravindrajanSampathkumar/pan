@@ -9,10 +9,23 @@
 .lable {
     font-size: 20px;
 }
-.example-icon{
+
+.example-icon {
     margin-right: 25px;
 }
 
 .spacer {
     flex: 1 1 auto;
-  }
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+mat-card-actions {
+    text-align: center;
+}
+
+.content {
+    margin-top: 30px;
+}

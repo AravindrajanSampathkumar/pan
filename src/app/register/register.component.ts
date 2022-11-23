@@ -1,4 +1,4 @@
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
@@ -9,30 +9,36 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit, OnDestroy {
-  registerForm:any;
+  registerForm: any;
+  currentPage: any = '';
   constructor(
-    private router: Router, public authService: AuthService
+    private router: Router, public authService: AuthService, private route: ActivatedRoute
   ) {
+    this.currentPage = this.route.snapshot.paramMap.get('page')
   }
 
   public ngOnInit(): void {
     this.registerForm = new FormGroup({
-      fname: new FormControl('',[Validators.required]),
-      lname: new FormControl('',[Validators.required]),
-      address: new FormControl('',[Validators.required]),
-      email: new FormControl('',[Validators.required]),
-      password: new FormControl('',[Validators.required]),
+      fname: new FormControl('', [Validators.required]),
+      lname: new FormControl('', [Validators.required]),
+      address: new FormControl('', [Validators.required]),
+      email: new FormControl('', [Validators.required]),
+      password: new FormControl('', [Validators.required]),
     });
     this.authService.userIsLoggedIn.next(true);
   }
 
-  register(){
+  register() {
     console.log('loginForm===============', this.registerForm.value);
     console.log('registered')
   }
 
-  navigateBack(){
-    this.router.navigate(['/']);
+  navigateBack() {
+    if (this.currentPage == 'DashboardPage') {
+      this.router.navigate(['/dashboard']);
+    } else {
+      this.router.navigate(['/']);
+    }
   }
   public ngOnDestroy(): void {
     this.authService.userIsLoggedIn.next(false);

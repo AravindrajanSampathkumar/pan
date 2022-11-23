@@ -1,39 +1,42 @@
 <ng-container *ngIf="!userIsLoggedIn">
-<p class="header-bar">
-  <!-- <mat-toolbar color="primary">
-    <mat-toolbar-row>
-      <span>Pan Application</span>
-      <span class="example-spacer"></span>
-      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="login()">
-       <span class="lable">Login</span>
-      </button>
-    </mat-toolbar-row>
-  </mat-toolbar>
-</p> -->
 
-<mat-toolbar color="primary">
-  <mat-toolbar-row>
-     <!-- <span><a href="/">HOME</a></span> -->
-     <span class="spacer"></span>     
-     <a  mat-button  routerLink="/login" class="lable">Login</a>
-     <a  mat-button  routerLink="/register" class="lable">Register</a>
-  </mat-toolbar-row>
-  </mat-toolbar>
+    <mat-toolbar color="primary">
+      <mat-toolbar-row>
+        <!-- <span><a href="/">HOME</a></span> -->
+        <span class="spacer"></span>
+        <!-- <a mat-button routerLink="/login" class="lable">Login</a> -->
+        <a mat-button routerLink="/register" class="lable">Register</a>
+      </mat-toolbar-row>
+    </mat-toolbar>
 
-<div fxFlexFill class="example-container">
-  <div fxLayout="column" fxLayoutGap="32px" [style.height]="'100%'">
-    <mat-card class="card-margins">
-      <mat-card-title></mat-card-title>
-        <div
-          fxLayout="row"
-          fxLayoutGap="32px"
-          fxLayout.lt-sm="column"      
-          fxLayoutGap.lt-sm="10px">
-          <div fxFlex="0 100 100%">
-              <img mat-card-image src="../assets/images/home_screen_img.jpg" alt="Free image">
-          </div>
+  <div class="content">
+    <div fxLayout="row" style="height: 75px; width: 100%;">
+      <!-- Column-2 Row-2-->
+      <div fxLayout="row" fxFlex="100" fxFlexFill fxLayoutAlign="space-around strech">
+        <div fxFlex="60" >
+          <img mat-card-image src="../assets/images/home_screen_img.jpg" alt="Free image">
         </div>
-      </mat-card>
+        <div fxFlex="30">
+          <!-- fxLayoutAlign="center center" -->
+          <mat-card class="my-card">
+            <mat-card-content>
+              <form class="my-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <mat-form-field class="full-width">
+                  <mat-label>Email</mat-label>
+                  <input matInput placeholder="Email" name="email" formControlName="email">
+                </mat-form-field>
+                <mat-form-field class="full-width">
+                  <mat-label>Password</mat-label>
+                  <input matInput placeholder="Password" type="password" name="password" formControlName="password">
+                </mat-form-field>
+                <mat-card-actions>
+                  <button type="submit" mat-raised-button color="primary" class="login-btn">LOGIN</button>
+                </mat-card-actions>
+              </form>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
     </div>
   </div>
 </ng-container>

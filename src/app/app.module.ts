@@ -25,13 +25,17 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatOptionModule } from '@angular/material/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormatTimePipe } from './pipes/formatTime.pipe';
+import { CommonModule } from '@angular/common';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FormatTimePipe
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatCardModule,
@@ -56,6 +60,7 @@ import { FormsModule } from '@angular/forms';
     MatMenuModule,
     MatSlideToggleModule,
     MatOptionModule,
+    ReactiveFormsModule
   ],
   exports:[
     MatCardModule,
@@ -80,7 +85,7 @@ import { FormsModule } from '@angular/forms';
     MatMenuModule,
     MatSlideToggleModule,
     MatOptionModule],
-  providers: [],
+  providers: [FormatTimePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
