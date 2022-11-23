@@ -22,11 +22,27 @@
               <form class="my-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
                 <mat-form-field class="full-width">
                   <mat-label>Phone Number</mat-label>
-                  <input matInput placeholder="Phone Number" name="phoneNumber" formControlName="phoneNumber">
+                  <input matInput name="phoneNumber" formControlName="phoneNumber" maxlength="10">
+                  <mat-error
+                    *ngIf="loginForm.controls['phoneNumber'].hasError('required') && ( loginForm.controls['phoneNumber'].dirty === true || loginsubmitted === true )">
+                    PhoneNumber number is required
+                  </mat-error>
+                  <mat-error
+                    *ngIf="loginForm.controls['phoneNumber'].hasError('min') && ( loginForm.controls['phoneNumber'].dirty === true || loginsubmitted === true )">
+                    PhoneNumber number must contain 10 digits
+                  </mat-error>
+                  <mat-error
+                    *ngIf="loginForm.controls['phoneNumber'].hasError('pattern') && ( loginForm.controls['phoneNumber'].dirty === true || loginsubmitted === true )">
+                    Invalid phone number
+                  </mat-error>
                 </mat-form-field>
                 <mat-form-field class="full-width">
                   <mat-label>Password</mat-label>
-                  <input matInput placeholder="Password" type="password" name="password" formControlName="password">
+                  <input matInput type="password" name="password" formControlName="password">
+                  <mat-error
+                    *ngIf="loginForm.controls['password'].hasError('required') && ( loginForm.controls['password'].dirty === true || loginsubmitted === true )">
+                    Password is required
+                  </mat-error>
                 </mat-form-field>
                 <mat-card-actions>
                   <button type="submit" mat-raised-button color="primary" class="login-btn">LOGIN</button>

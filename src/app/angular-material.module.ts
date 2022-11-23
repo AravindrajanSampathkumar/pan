@@ -22,9 +22,41 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatNativeDateModule, MatOptionModule } from '@angular/material/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatStepperModule} from '@angular/material/stepper';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatRippleModule} from '@angular/material/core';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatSliderModule} from '@angular/material/slider';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatSortModule} from '@angular/material/sort';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatTreeModule} from '@angular/material/tree';
 
 @NgModule({
     imports: [
+        MatTreeModule,
+        MatTabsModule,
+        MatSortModule,
+        MatSnackBarModule,
+        MatSliderModule,
+        MatProgressSpinnerModule,
+        MatProgressBarModule,
+        MatRippleModule,
+        MatExpansionModule,
+        MatAutocompleteModule,
+        MatBottomSheetModule,
+        MatButtonToggleModule,
+        MatCheckboxModule,
+        MatStepperModule,
+        MatDialogModule,
+        MatDividerModule,
         MatCardModule,
         MatMenuModule,
         CommonModule,
@@ -51,7 +83,23 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
         MatOptionModule,
         FormsModule
     ],
-    exports: [
+    exports: [ 
+        MatTreeModule,
+        MatTabsModule,
+        MatSortModule,
+        MatSnackBarModule,
+        MatSliderModule,
+        MatProgressSpinnerModule,
+        MatProgressBarModule,
+        MatRippleModule,
+        MatExpansionModule,
+        MatAutocompleteModule,
+        MatBottomSheetModule,
+        MatButtonToggleModule,
+        MatCheckboxModule,
+        MatStepperModule,
+        MatDialogModule,
+        MatDividerModule,
         MatCardModule,
         MatMenuModule,
         MatButtonModule,
