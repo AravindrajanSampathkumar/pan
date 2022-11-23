@@ -22,16 +22,13 @@ export class AppComponent implements OnInit, OnDestroy {
       console.log('userIsLoggedIn==========', this.userIsLoggedIn)
     });
     this.loginForm = new FormGroup({
-      email: new FormControl('', [Validators.required]),
+      phoneNumber: new FormControl('', [Validators.required]),
       password: new FormControl('', [Validators.required]),
     });
   }
   //this.formRef.addValidation('ipSubnetGroup1',['ipAddress'], [Validators.required, CustomValidators.pattern(IP_SMTP, this.translationService.l10nStrings.get(L10N_VARIABLES.VALIDIP_ADDRESS))]);
   ngAfterViewChecked() {
     this.cd.detectChanges();
-  }
-  login() {
-    this.router.navigate(['/login']);
   }
 
   onSubmit(): void {

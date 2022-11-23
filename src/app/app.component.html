@@ -1,19 +1,18 @@
 <ng-container *ngIf="!userIsLoggedIn">
 
-    <mat-toolbar color="primary">
-      <mat-toolbar-row>
-        <!-- <span><a href="/">HOME</a></span> -->
-        <span class="spacer"></span>
-        <!-- <a mat-button routerLink="/login" class="lable">Login</a> -->
-        <a mat-button routerLink="/register" class="lable">Register</a>
-      </mat-toolbar-row>
-    </mat-toolbar>
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <!-- <span><a href="/">HOME</a></span> -->
+      <span class="spacer"></span>
+      <a mat-button routerLink="/register" class="lable">Register</a>
+    </mat-toolbar-row>
+  </mat-toolbar>
 
   <div class="content">
     <div fxLayout="row" style="height: 75px; width: 100%;">
       <!-- Column-2 Row-2-->
       <div fxLayout="row" fxFlex="100" fxFlexFill fxLayoutAlign="space-around strech">
-        <div fxFlex="60" >
+        <div fxFlex="60">
           <img mat-card-image src="../assets/images/home_screen_img.jpg" alt="Free image">
         </div>
         <div fxFlex="30">
@@ -22,8 +21,8 @@
             <mat-card-content>
               <form class="my-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
                 <mat-form-field class="full-width">
-                  <mat-label>Email</mat-label>
-                  <input matInput placeholder="Email" name="email" formControlName="email">
+                  <mat-label>Phone Number</mat-label>
+                  <input matInput placeholder="Phone Number" name="phoneNumber" formControlName="phoneNumber">
                 </mat-form-field>
                 <mat-form-field class="full-width">
                   <mat-label>Password</mat-label>
