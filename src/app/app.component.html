@@ -21,20 +21,12 @@
             <mat-card-content>
               <form class="my-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
                 <mat-form-field class="full-width">
-                  <mat-label>Phone Number</mat-label>
-                  <input matInput name="phoneNumber" formControlName="phoneNumber" maxlength="10">
+                  <mat-label>User Name</mat-label>
+                  <input matInput name="userName" formControlName="userName" >
                   <mat-error
-                    *ngIf="loginForm.controls['phoneNumber'].hasError('required') && ( loginForm.controls['phoneNumber'].dirty === true || loginsubmitted === true )">
-                    PhoneNumber number is required
-                  </mat-error>
-                  <mat-error
-                    *ngIf="loginForm.controls['phoneNumber'].hasError('min') && ( loginForm.controls['phoneNumber'].dirty === true || loginsubmitted === true )">
-                    PhoneNumber number must contain 10 digits
-                  </mat-error>
-                  <mat-error
-                    *ngIf="loginForm.controls['phoneNumber'].hasError('pattern') && ( loginForm.controls['phoneNumber'].dirty === true || loginsubmitted === true )">
-                    Invalid phone number
-                  </mat-error>
+                  *ngIf="loginForm.controls['userName'].hasError('required') && ( loginForm.controls['userName'].dirty === true || loginsubmitted === true )">
+                  Username is required
+                </mat-error>
                 </mat-form-field>
                 <mat-form-field class="full-width">
                   <mat-label>Password</mat-label>

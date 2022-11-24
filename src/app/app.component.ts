@@ -23,8 +23,9 @@ export class AppComponent implements OnInit, OnDestroy {
       console.log('userIsLoggedIn==========', this.userIsLoggedIn)
     });
     this.loginForm = new FormGroup({
-      phoneNumber: new FormControl('', [Validators.required,Validators.min(1000000000), Validators.pattern(("[6-9]\\d{9}"))]),
-      password: new FormControl('', [Validators.required]),
+      userName: new FormControl('', [Validators.required]),
+      password: new FormControl('', [Validators.required, Validators.minLength(6),
+        Validators.maxLength(40)]),
     });
   }
   
