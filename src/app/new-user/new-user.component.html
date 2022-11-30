@@ -10,6 +10,107 @@
   </mat-toolbar-row>
 </mat-toolbar>
 
-<p>
-  new-user works!
-</p>
+<mat-card class="my-card">
+  <mat-card-content>
+     <form class="my-form container" [formGroup]="createNewUserForm" (ngSubmit)="register()">
+        <mat-form-field class="full-width">
+           <mat-label>First Name</mat-label>
+           <input matInput name="fname" required formControlName="fname">
+           <mat-error
+           *ngIf="createNewUserForm.controls['fname'].hasError('required') && ( createNewUserForm.controls['fname'].dirty === true || registerSubmitted === true )">
+           First name is required
+        </mat-error>
+        </mat-form-field>
+        <mat-form-field class="full-width">
+           <mat-label>Last Name</mat-label>
+           <input matInput name="lname" required formControlName="lname">
+           <mat-error
+           *ngIf="createNewUserForm.controls['lname'].hasError('required') && ( createNewUserForm.controls['lname'].dirty === true || registerSubmitted === true )">
+           Last name is required
+        </mat-error>
+        </mat-form-field>
+        <mat-form-field class="full-width">
+           <mat-label>Aadhaar Number</mat-label>
+           <input matInput name="lname" required formControlName="aadhar" maxlength="12" minlength="12">
+           <mat-error
+           *ngIf="createNewUserForm.controls['aadhar'].hasError('required') && ( createNewUserForm.controls['aadhar'].dirty === true || registerSubmitted === true )">
+           Please enter 12 digit aadhar detail.
+        </mat-error>
+        </mat-form-field>
+        <mat-form-field class="full-width">
+           <mat-label>Address</mat-label>
+           <input matInput name="address" required formControlName="address">
+           <mat-error
+           *ngIf="createNewUserForm.controls['address'].hasError('required') && ( createNewUserForm.controls['address'].dirty === true || registerSubmitted === true )">
+           Address is required
+        </mat-error>
+        </mat-form-field>
+        <mat-form-field class="full-width">
+           <mat-label>Phone Number</mat-label>
+           <input matInput name="phoneNumber" required formControlName="phoneNumber" maxlength="10">
+           <mat-error
+              *ngIf="createNewUserForm.controls['phoneNumber'].hasError('required') && ( createNewUserForm.controls['phoneNumber'].dirty === true || registerSubmitted === true )">
+              PhoneNumber number is required
+           </mat-error>
+           <mat-error
+              *ngIf="createNewUserForm.controls['phoneNumber'].hasError('min') && ( createNewUserForm.controls['phoneNumber'].dirty === true || registerSubmitted === true )">
+              PhoneNumber number must contain 10 digits
+           </mat-error>
+           <mat-error
+              *ngIf="createNewUserForm.controls['phoneNumber'].hasError('pattern') && ( createNewUserForm.controls['phoneNumber'].dirty === true || registerSubmitted === true )">
+              Invalid phone number
+           </mat-error>
+        </mat-form-field>
+        <mat-form-field class="full-width">
+           <mat-label>Email</mat-label>
+           <input matInput name="email" formControlName="email" required>
+           <mat-error
+           *ngIf="createNewUserForm.controls['email'].hasError('required') && ( createNewUserForm.controls['email'].dirty === true || registerSubmitted === true )">
+           Email is required
+        </mat-error>
+        <mat-error
+           *ngIf="createNewUserForm.controls['email'].hasError('pattern') && ( createNewUserForm.controls['email'].dirty === true || registerSubmitted === true )">
+           Please enter valid email
+        </mat-error>
+        </mat-form-field>
+        <mat-form-field class="full-width">
+           <mat-label>Password</mat-label>
+           <input matInput type="password" name="password" formControlName="password" required>
+           <mat-error *ngIf="createNewUserForm.controls['password'].hasError('pattern') && ( createNewUserForm.controls['password'].dirty === true || registerSubmitted === true )">
+              Please enter your password
+           </mat-error>
+        </mat-form-field>
+        <mat-form-field class="full-width">
+           <mat-label>Confirm Password</mat-label>
+           <input matInput type="password" name="confirmPassword" formControlName="confirmPassword">
+           <mat-error *ngIf="createNewUserForm.controls['confirmPassword'].hasError('mismatch')">
+              Passwords do not match
+           </mat-error>  
+        </mat-form-field>
+        <div class="gender">
+           <label>Gender : </label>
+           <mat-radio-group formControlName="gender" required>
+              <mat-radio-button value="male">Male</mat-radio-button>
+              <mat-radio-button value="female">Female</mat-radio-button>
+              <mat-radio-button value="other">Other</mat-radio-button>
+              <mat-error *ngIf="createNewUserForm.controls['gender'].hasError('required') && registerSubmitted === true">Gender is required</mat-error>
+           </mat-radio-group>
+        </div>
+        <mat-form-field>
+           <mat-label>Date of Birth</mat-label>
+           <input matInput [matDatepicker]="picker" placeholder="Choose a date" name="dob" formControlName="dob" required>
+           <mat-error
+           *ngIf="createNewUserForm.controls['dob'].hasError('required') && ( createNewUserForm.controls['dob'].dirty === true || registerSubmitted === true )">
+           Date of birth is required
+        </mat-error>
+           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+           <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <mat-card-actions>
+           <button mat-raised-button type="submit" color="primary">REGISTER</button>
+        </mat-card-actions>         
+     </form>
+
+  </mat-card-content>
+</mat-card>
+

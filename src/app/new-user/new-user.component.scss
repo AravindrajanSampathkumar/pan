@@ -1,0 +1,31 @@
+.my-form{
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+   
+  .full-width {
+    width: 100%;
+  }
+
+  mat-card {
+    max-width: 400px;
+    margin: 2em auto;
+    text-align: center;
+  }
+
+  mat-form-field {
+    display: block;
+  }
+
+  mat-icon{
+    cursor: pointer;
+  }
+
+  .container .mat-radio-button {
+    margin: 0 5px;
+  }
+
+  .gender{
+    text-align: left;;
+  }
