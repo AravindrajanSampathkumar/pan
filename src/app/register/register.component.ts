@@ -16,7 +16,7 @@ export class RegisterComponent implements OnInit, OnDestroy {
   constructor(
     private router: Router, public authService: AuthService, private route: ActivatedRoute
   ) {
-    this.currentPage = this.route.snapshot.paramMap.get('page')
+   // this.currentPage = this.route.snapshot.paramMap.get('page')
   }
 
   public ngOnInit(): void {
@@ -47,11 +47,11 @@ export class RegisterComponent implements OnInit, OnDestroy {
   }
 
   navigateBack() {
-    if (this.currentPage == 'DashboardPage') {
-      this.router.navigate(['/dashboard']);
-    } else {
+    // if (this.currentPage == 'DashboardPage') {
+    //   this.router.navigate(['/dashboard']);
+    // } else {
       this.router.navigate(['/']);
-    }
+    // }
   }
   public ngOnDestroy(): void {
     this.authService.userIsLoggedIn.next(false);

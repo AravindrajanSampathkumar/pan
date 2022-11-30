@@ -5,11 +5,13 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
 import { DialogPopupComponent } from '../dialog-popup/dialog-popup.component';
 import { AngularMaterialModule } from '../angular-material.module';
+import { NewUserComponent } from '../new-user/new-user.component';
 
 @NgModule({
   declarations: [
     DashboardComponent,
     DialogPopupComponent,
+    NewUserComponent
   
   ],
   imports: [

@@ -24,7 +24,9 @@ export class DashboardComponent implements OnInit, OnDestroy {
   }
 
   navigateRegisterPage() {
-    this.router.navigate(['/register', { page: 'DashboardPage' }]);
+    // this.router.navigate(['/register', { page: 'DashboardPage' }]);
+    this.router.navigate(['/dashboard/newUser']);
+
   }
   ngOnDestroy(): void {
     this.authService.userIsLoggedIn.next(false);
