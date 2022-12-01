@@ -13,486 +13,516 @@
 <div class="header">
     <h1>New Pan Creation</h1>
 </div>
-
-<!-- <mat-card class="my-card">
-  <mat-card-content>
-     <form class="my-form container" [formGroup]="createNewUserForm" (ngSubmit)="register()">
-        <mat-form-field class="full-width">
-           <mat-label>First Name</mat-label>
-           <input matInput name="fname" required formControlName="fname">
-           <mat-error
-           *ngIf="createNewUserForm.controls['fname'].hasError('required') && ( createNewUserForm.controls['fname'].dirty === true || registerSubmitted === true )">
-           First name is required
-        </mat-error>
-        </mat-form-field>
-        <mat-form-field class="full-width">
-           <mat-label>Last Name</mat-label>
-           <input matInput name="lname" required formControlName="lname">
-           <mat-error
-           *ngIf="createNewUserForm.controls['lname'].hasError('required') && ( createNewUserForm.controls['lname'].dirty === true || registerSubmitted === true )">
-           Last name is required
-        </mat-error>
-        </mat-form-field>
-        <mat-form-field class="full-width">
-           <mat-label>Aadhaar Number</mat-label>
-           <input matInput name="lname" required formControlName="aadhar" maxlength="12" minlength="12">
-           <mat-error
-           *ngIf="createNewUserForm.controls['aadhar'].hasError('required') && ( createNewUserForm.controls['aadhar'].dirty === true || registerSubmitted === true )">
-           Please enter 12 digit aadhar detail.
-        </mat-error>
-        </mat-form-field>
-        <mat-form-field class="full-width">
-           <mat-label>Address</mat-label>
-           <input matInput name="address" required formControlName="address">
-           <mat-error
-           *ngIf="createNewUserForm.controls['address'].hasError('required') && ( createNewUserForm.controls['address'].dirty === true || registerSubmitted === true )">
-           Address is required
-        </mat-error>
-        </mat-form-field>
-        <mat-form-field class="full-width">
-           <mat-label>Phone Number</mat-label>
-           <input matInput name="phoneNumber" required formControlName="phoneNumber" maxlength="10">
-           <mat-error
-              *ngIf="createNewUserForm.controls['phoneNumber'].hasError('required') && ( createNewUserForm.controls['phoneNumber'].dirty === true || registerSubmitted === true )">
-              PhoneNumber number is required
-           </mat-error>
-           <mat-error
-              *ngIf="createNewUserForm.controls['phoneNumber'].hasError('min') && ( createNewUserForm.controls['phoneNumber'].dirty === true || registerSubmitted === true )">
-              PhoneNumber number must contain 10 digits
-           </mat-error>
-           <mat-error
-              *ngIf="createNewUserForm.controls['phoneNumber'].hasError('pattern') && ( createNewUserForm.controls['phoneNumber'].dirty === true || registerSubmitted === true )">
-              Invalid phone number
-           </mat-error>
-        </mat-form-field>
-        <mat-form-field class="full-width">
-           <mat-label>Email</mat-label>
-           <input matInput name="email" formControlName="email" required>
-           <mat-error
-           *ngIf="createNewUserForm.controls['email'].hasError('required') && ( createNewUserForm.controls['email'].dirty === true || registerSubmitted === true )">
-           Email is required
-        </mat-error>
-        <mat-error
-           *ngIf="createNewUserForm.controls['email'].hasError('pattern') && ( createNewUserForm.controls['email'].dirty === true || registerSubmitted === true )">
-           Please enter valid email
-        </mat-error>
-        </mat-form-field>
-        <mat-form-field class="full-width">
-           <mat-label>Password</mat-label>
-           <input matInput type="password" name="password" formControlName="password" required>
-           <mat-error *ngIf="createNewUserForm.controls['password'].hasError('pattern') && ( createNewUserForm.controls['password'].dirty === true || registerSubmitted === true )">
-              Please enter your password
-           </mat-error>
-        </mat-form-field>
-        <mat-form-field class="full-width">
-           <mat-label>Confirm Password</mat-label>
-           <input matInput type="password" name="confirmPassword" formControlName="confirmPassword">
-           <mat-error *ngIf="createNewUserForm.controls['confirmPassword'].hasError('mismatch')">
-              Passwords do not match
-           </mat-error>  
-        </mat-form-field>
-        <div class="gender">
-           <label>Gender : </label>
-           <mat-radio-group formControlName="gender" required>
-              <mat-radio-button value="male">Male</mat-radio-button>
-              <mat-radio-button value="female">Female</mat-radio-button>
-              <mat-radio-button value="other">Other</mat-radio-button>
-              <mat-error *ngIf="createNewUserForm.controls['gender'].hasError('required') && registerSubmitted === true">Gender is required</mat-error>
-           </mat-radio-group>
-        </div>
-        <mat-form-field>
-           <mat-label>Date of Birth</mat-label>
-           <input matInput [matDatepicker]="picker" placeholder="Choose a date" name="dob" formControlName="dob" required>
-           <mat-error
-           *ngIf="createNewUserForm.controls['dob'].hasError('required') && ( createNewUserForm.controls['dob'].dirty === true || registerSubmitted === true )">
-           Date of birth is required
-        </mat-error>
-           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-           <mat-datepicker #picker></mat-datepicker>
-        </mat-form-field>
-        <mat-card-actions>
-           <button mat-raised-button type="submit" color="primary">REGISTER</button>
-        </mat-card-actions>         
-     </form>
-
-  </mat-card-content>
-</mat-card> -->
-
 <mat-card class="createUser-card">
     <mat-card-content>
-        <div fxLayout="row" fxLayoutAlign="space-between">
-            <div fxLayout="column" fxFlex="0 0 47%">
-                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
-                    <mat-label>Application Type: 49A</mat-label>
-                    <input matInput>
-                </mat-form-field>
+        <form class="my-form container" [formGroup]="createNewUserForm" (ngSubmit)="createUser()">
+            <div fxLayout="row" fxLayoutAlign="space-between">
+                <div fxLayout="column" fxFlex="0 0 47%">
+                    <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                        <mat-label>Application Type: 49A</mat-label>
+                        <input matInput name="allication49A" required formControlName="allication49A">
+                        <mat-error
+                            *ngIf="createNewUserForm.controls['allication49A'].hasError('required') && ( createNewUserForm.controls['allication49A'].dirty === true || registerSubmitted === true )">
+                            Application type is required
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div fxLayout="column" fxFlex="0 0 47%">
+                    <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                        <mat-label>Title : Shri/Smt/Kumari</mat-label>
+                        <mat-select formControlName="title" required>
+                            <mat-option>Select</mat-option>
+                            <mat-option *ngFor="let value of titles" [value]="value.value">
+                                {{value.name}}
+                            </mat-option>
+                        </mat-select>
+                        <mat-error
+                            *ngIf="createNewUserForm.controls['title'].hasError('required') && ( createNewUserForm.controls['title'].dirty === true || registerSubmitted === true )">
+                            Please select title.
+                        </mat-error>
+                    </mat-form-field>
+                </div>
             </div>
-            <div fxLayout="column" fxFlex="0 0 47%">
-                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
-                    <mat-label>Title : Shri/Smt/Kumari</mat-label>
-                    <input matInput>
-                </mat-form-field>
+            <div fxLayout="row" fxLayoutAlign="space-between">
+                <div fxLayout="column" fxFlex="0 0 47%">
+                    <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                        <mat-label>First Name :</mat-label>
+                        <input matInput name="fName" required formControlName="fName" maxlength="64">
+                        <mat-error
+                            *ngIf="createNewUserForm.controls['fName'].hasError('required') && ( createNewUserForm.controls['fName'].dirty === true || registerSubmitted === true )">
+                            First name is required
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div fxLayout="column" fxFlex="0 0 47%">
+                    <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                        <mat-label>Middle Name:</mat-label>
+                        <input matInput formControlName="mName" maxlength="64">
+                    </mat-form-field>
+                </div>
             </div>
-        </div>
-        <!-- <div fxLayout="row" fxLayoutAlign="start">
-          <div fxLayout="column" fxFlex="0 0 47%">
-              <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
-                  <mat-label>Phone Number</mat-label>
-                  <input matInput>
-              </mat-form-field>
-          </div>
-      </div> -->
-        <div fxLayout="row" fxLayoutAlign="space-between">
+            <div fxLayout="row" fxLayoutAlign="space-between">
+                <div fxLayout="column" fxFlex="0 0 47%">
+                    <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                        <mat-label>Last Name:</mat-label>
+                        <input matInput formControlName="lName" maxlength="64">
+                    </mat-form-field>
+                </div>
+                <div fxLayout="column" fxFlex="0 0 47%">
+                    <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                        <mat-label>Gender :</mat-label>
+                        <mat-select formControlName="gender" required>
+                            <mat-option>Select Gender</mat-option>
+                            <mat-option *ngFor="let value of gender" [value]="value.value">
+                                {{value.name}}
+                            </mat-option>
+                        </mat-select>
+                        <mat-error
+                            *ngIf="createNewUserForm.controls['gender'].hasError('required') && ( createNewUserForm.controls['gender'].dirty === true || registerSubmitted === true )">
+                            Please select gender
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="space-between">
+                <div fxLayout="column" fxFlex="0 0 47%">
+                    <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                        <mat-label>Date of Birth</mat-label>
+                        <input matInput [matDatepicker]="picker" placeholder="Choose a date" name="dob"
+                            formControlName="dob" required>
+                        <mat-error
+                            *ngIf="createNewUserForm.controls['dob'].hasError('required') && ( createNewUserForm.controls['dob'].dirty === true || registerSubmitted === true )">
+                            Date of birth is required
+                        </mat-error>
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                </div>
+                <div fxLayout="column" fxFlex="0 0 47%">
+                    <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                        <mat-label>Name on Pan :</mat-label>
+                        <input matInput name="namePan" required formControlName="namePan" maxlength="64">
+                        <mat-error
+                            *ngIf="createNewUserForm.controls['namePan'].hasError('required') && ( createNewUserForm.controls['namePan'].dirty === true || registerSubmitted === true )">
+                            Pan name is required
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="space-between">
+                <div fxLayout="column" fxFlex="0 0 47%">
+                    <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                        <mat-label>Consent : Y</mat-label>
+                        <input matInput name="consent" required formControlName="consent" maxlength="64">
+                        <mat-error
+                            *ngIf="createNewUserForm.controls['consent'].hasError('required') && ( createNewUserForm.controls['consent'].dirty === true || registerSubmitted === true )">
+                            Consent is required
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div fxLayout="column" fxFlex="0 0 47%">
+                    <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                        <mat-label>Known by Other : Y/N</mat-label>
+                        <mat-select formControlName="kOther" required>
+                            <mat-option>Select known option</mat-option>
+                            <mat-option *ngFor="let value of knowOthers" [value]="value.value">
+                                {{value.name}}
+                            </mat-option>
+                        </mat-select>
+                        <mat-error
+                            *ngIf="createNewUserForm.controls['kOther'].hasError('required') && ( createNewUserForm.controls['kOther'].dirty === true || registerSubmitted === true )">
+                            Please select known value
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="space-between">
+                <div fxLayout="column" fxFlex="0 0 47%">
+                    <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                        <mat-label>Other First Name :</mat-label>
+                        <input matInput formControlName="oFname" maxlength="64">
+                    </mat-form-field>
+                </div>
+                <div fxLayout="column" fxFlex="0 0 47%">
+                    <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                        <mat-label>Other Middle Name :</mat-label>
+                        <input matInput formControlName="oMname" maxlength="64">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="space-between">
+                <div fxLayout="column" fxFlex="0 0 47%">
+                    <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                        <mat-label>Other Last Name : </mat-label>
+                        <input matInput formControlName="oLname" maxlength="64">
+                    </mat-form-field>
+                </div>
+                <div fxLayout="column" fxFlex="0 0 47%">
+                    <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                        <mat-label>Category Type : P</mat-label>
+                        <input matInput name="category" required formControlName="category" maxlength="64">
+                        <mat-error
+                            *ngIf="createNewUserForm.controls['category'].hasError('required') && ( createNewUserForm.controls['category'].dirty === true || registerSubmitted === true )">
+                            Category is required
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="space-between">
+                <div fxLayout="column" fxFlex="0 0 47%">
+                    <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                        <mat-label>Name as per Aadhar :</mat-label>
+                        <input matInput name="aadharName" required formControlName="aadharName" maxlength="64">
+                        <mat-error
+                            *ngIf="createNewUserForm.controls['aadharName'].hasError('required') && ( createNewUserForm.controls['aadharName'].dirty === true || registerSubmitted === true )">
+                            Aadhar name is required
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div fxLayout="column" fxFlex="0 0 47%">
+                    <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                        <mat-label>Aadhar No :</mat-label>
+                        <input matInput name="aadharNum" required formControlName="aadharNum" maxlength="12"
+                            minlength="12">
+                        <mat-error
+                            *ngIf="createNewUserForm.controls['aadharNum'].hasError('required') && ( createNewUserForm.controls['aadharNum'].dirty === true || registerSubmitted === true )">
+                            Aadhar name is required
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="space-between">
+                <div fxLayout="column" fxFlex="0 0 47%">
+                    <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                        <mat-label>Single Parent : Y/N</mat-label>
+                        <mat-select formControlName="sinPatent" required>
+                            <mat-option>Select</mat-option>
+                            <mat-option *ngFor="let value of singleParents" [value]="value.value">
+                                {{value.name}}
+                            </mat-option>
+                        </mat-select>
+                        <mat-error
+                            *ngIf="createNewUserForm.controls['sinPatent'].hasError('required') && ( createNewUserForm.controls['sinPatent'].dirty === true || registerSubmitted === true )">
+                            Please select the value
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div fxLayout="column" fxFlex="0 0 47%">
+                    <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                        <mat-label>Father First Name:</mat-label>
+                        <input matInput name="fFname" required formControlName="fFname" maxlength="64">
+                        <mat-error
+                            *ngIf="createNewUserForm.controls['fFname'].hasError('required') && ( createNewUserForm.controls['fFname'].dirty === true || registerSubmitted === true )">
+                            Father name is required
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="space-between">
+                <div fxLayout="column" fxFlex="0 0 47%">
+                    <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                        <mat-label>Father Midlle Name :</mat-label>
+                        <input matInput formControlName="fMname" maxlength="64">
+                    </mat-form-field>
+                </div>
+                <div fxLayout="column" fxFlex="0 0 47%">
+                    <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                        <mat-label>Father Last Name :</mat-label>
+                        <input matInput formControlName="fLname" maxlength="64">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="space-between">
+                <div fxLayout="column" fxFlex="0 0 47%">
+                    <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                        <mat-label>Mother First Name Name:</mat-label>
+                        <input matInput name="mFname" required formControlName="mFname" maxlength="64">
+                        <mat-error
+                            *ngIf="createNewUserForm.controls['mFname'].hasError('required') && ( createNewUserForm.controls['mFname'].dirty === true || registerSubmitted === true )">
+                            Mother name is required
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div fxLayout="column" fxFlex="0 0 47%">
+                    <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                        <mat-label>Mother Middle Name :</mat-label>
+                        <input matInput formControlName="mMname" maxlength="64">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="space-between">
+                <div fxLayout="column" fxFlex="0 0 47%">
+                    <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                        <mat-label>Mother Last Name :</mat-label>
+                        <input matInput formControlName="mLname" maxlength="64">
+                    </mat-form-field>
+                </div>
+                <div fxLayout="column" fxFlex="0 0 47%">
+                    <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                        <mat-label>ParentNamePrint : F/M</mat-label>
+                        <input matInput formControlName="pParentName" required>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="space-between">
+                <div fxLayout="column" fxFlex="0 0 47%">
+                    <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                        <mat-label>Physical Pan Required : Y/N</mat-label>
+                        <mat-select formControlName="pPanReq" required>
+                            <mat-option>Select</mat-option>
+                            <mat-option *ngFor="let value of panDetails" [value]="value.value">
+                                {{value.name}}
+                            </mat-option>
+                        </mat-select>
+                        <mat-error
+                            *ngIf="createNewUserForm.controls['pPanReq'].hasError('required') && ( createNewUserForm.controls['pPanReq'].dirty === true || registerSubmitted === true )">
+                            Please select the physical pan required or not
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div fxLayout="column" fxFlex="0 0 47%">
+                    <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                        <mat-label>Application Mode : K</mat-label>
+                        <input matInput name="applicationModeK" required formControlName="applicationModeK"
+                            maxlength="64">
+                        <mat-error
+                            *ngIf="createNewUserForm.controls['applicationModeK'].hasError('required') && ( createNewUserForm.controls['applicationModeK'].dirty === true || registerSubmitted === true )">
+                            Application mode is required
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="space-between">
+                <div fxLayout="column" fxFlex="0 0 47%">
+                    <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                        <mat-label>Telephone/Mobile no :</mat-label>
+                        <input matInput name="phoneNumber" required formControlName="phoneNumber" maxlength="10"
+                            type="number">
+                        <mat-error
+                            *ngIf="createNewUserForm.controls['phoneNumber'].hasError('required') && ( createNewUserForm.controls['phoneNumber'].dirty === true || registerSubmitted === true )">
+                            PhoneNumber number is required
+                        </mat-error>
+                        <mat-error
+                            *ngIf="createNewUserForm.controls['phoneNumber'].hasError('min') && ( createNewUserForm.controls['phoneNumber'].dirty === true || registerSubmitted === true )">
+                            PhoneNumber number must contain 10 digits
+                        </mat-error>
+                        <mat-error
+                            *ngIf="createNewUserForm.controls['phoneNumber'].hasError('pattern') && ( createNewUserForm.controls['phoneNumber'].dirty === true || registerSubmitted === true )">
+                            Invalid phone number
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div fxLayout="column" fxFlex="0 0 47%">
+                    <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                        <mat-label>Email ID :</mat-label>
+                        <input matInput name="email" formControlName="email" required>
+                        <mat-error
+                            *ngIf="createNewUserForm.controls['email'].hasError('required') && ( createNewUserForm.controls['email'].dirty === true || registerSubmitted === true )">
+                            Email is required
+                        </mat-error>
+                        <mat-error
+                            *ngIf="createNewUserForm.controls['email'].hasError('pattern') && ( createNewUserForm.controls['email'].dirty === true || registerSubmitted === true )">
+                            Please enter valid email
+                        </mat-error>
+                    </mat-form-field>
+                </div>
 
-            <div fxLayout="column" fxFlex="0 0 47%">
-                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
-                    <mat-label>First Name:</mat-label>
-                    <input matInput>
-                </mat-form-field>
             </div>
+            <div fxLayout="row" fxLayoutAlign="space-between">
+                <div fxLayout="column" fxFlex="0 0 47%">
+                    <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                        <mat-label>Place :</mat-label>
+                        <input matInput name="place" required formControlName="place" maxlength="64">
+                        <mat-error
+                            *ngIf="createNewUserForm.controls['place'].hasError('required') && ( createNewUserForm.controls['place'].dirty === true || registerSubmitted === true )">
+                            Place is required
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div fxLayout="column" fxFlex="0 0 47%">
+                    <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                        <mat-label>Std Code :</mat-label>
+                        <input matInput name="stdCode" required formControlName="stdCode" type="number">
+                        <mat-error
+                            *ngIf="createNewUserForm.controls['stdCode'].hasError('required') && ( createNewUserForm.controls['stdCode'].dirty === true || registerSubmitted === true )">
+                            Std code is required
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="space-between">
+                <div fxLayout="column" fxFlex="0 0 47%">
+                    <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                        <mat-label>ISD Code :</mat-label>
+                        <input matInput name="isdCode" required formControlName="isdCode" type="number">
+                        <mat-error
+                            *ngIf="createNewUserForm.controls['isdCode'].hasError('required') && ( createNewUserForm.controls['isdCode'].dirty === true || registerSubmitted === true )">
+                            ISD code is required
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div fxLayout="column" fxFlex="0 0 47%">
+                    <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                        <mat-label>Source of Income : Y/N</mat-label>
+                        <mat-select formControlName="sourOfIncome" required>
+                            <mat-option>Select</mat-option>
+                            <mat-option *ngFor="let value of sourceOfIncomeData" [value]="value.value">
+                                {{value.name}}
+                            </mat-option>
+                        </mat-select>
+                        <mat-error
+                            *ngIf="createNewUserForm.controls['sourOfIncome'].hasError('required') && ( createNewUserForm.controls['sourOfIncome'].dirty === true || registerSubmitted === true )">
+                            Please select the source of income.
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="space-between">
+                <div fxLayout="column" fxFlex="0 0 47%">
+                    <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                        <mat-label>Salary :</mat-label>
+                        <input matInput name="salary" required formControlName="salary" type="number">
+                        <mat-error
+                            *ngIf="createNewUserForm.controls['salary'].hasError('required') && ( createNewUserForm.controls['salary'].dirty === true || registerSubmitted === true )">
+                            Salary is required
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div fxLayout="column" fxFlex="0 0 47%">
+                    <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                        <mat-label>Other Source :</mat-label>
+                        <input matInput formControlName="othrSource">
+                    </mat-form-field>
+                </div>
 
-            <div fxLayout="column" fxFlex="0 0 47%">
-                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
-                    <mat-label>Middle Name:</mat-label>
-                    <input matInput>
-                </mat-form-field>
             </div>
-        </div>
-        <div fxLayout="row" fxLayoutAlign="space-between">
+            <div fxLayout="row" fxLayoutAlign="space-between">
+                <div fxLayout="column" fxFlex="0 0 47%">
+                    <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                        <mat-label>Business proof :</mat-label>
+                        <input matInput formControlName="bussinessProof">
+                    </mat-form-field>
+                </div>
+                <div fxLayout="column" fxFlex="0 0 47%">
+                    <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                        <mat-label>Business proof Code :</mat-label>
+                        <input matInput formControlName="bussinessProofCode">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="space-between">
+                <div fxLayout="column" fxFlex="0 0 47%">
+                    <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                        <mat-label>No Income : </mat-label>
+                        <input matInput formControlName="noIncome">
+                    </mat-form-field>
+                </div>
+                <div fxLayout="column" fxFlex="0 0 47%">
+                    <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                        <mat-label>Housepro :</mat-label>
+                        <input matInput formControlName="housePro">
+                    </mat-form-field>
+                </div>
 
-            <div fxLayout="column" fxFlex="0 0 47%">
-                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
-                    <mat-label>Last Name:</mat-label>
-                    <input matInput>
-                </mat-form-field>
             </div>
-            <div fxLayout="column" fxFlex="0 0 47%">
-                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
-                    <mat-label>Gender :</mat-label>
-                    <input matInput>
-                </mat-form-field>
-            </div>
-        </div>
-        <div fxLayout="row" fxLayoutAlign="space-between">
-            <div fxLayout="column" fxFlex="0 0 47%">
-                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
-                    <mat-label>DOB :</mat-label>
-                    <input matInput>
-                </mat-form-field>
-            </div>
-            <div fxLayout="column" fxFlex="0 0 47%">
-                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
-                    <mat-label>Name on Pan</mat-label>
-                    <input matInput>
-                </mat-form-field>
-            </div>
-        </div>
-        <div fxLayout="row" fxLayoutAlign="space-between">
+            <div fxLayout="row" fxLayoutAlign="space-between">
+                <div fxLayout="column" fxFlex="0 0 47%">
+                    <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                        <mat-label>Captial Gains :</mat-label>
+                        <input matInput formControlName="capitalGain">
+                    </mat-form-field>
+                </div>
+                <div fxLayout="column" fxFlex="0 0 47%">
+                    <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                        <mat-label>Address For Communication : R/O</mat-label>
+                        <input matInput name="addressForComm" required formControlName="addressForComm" maxlength="64">
+                        <mat-error
+                            *ngIf="createNewUserForm.controls['addressForComm'].hasError('required') && ( createNewUserForm.controls['addressForComm'].dirty === true || registerSubmitted === true )">
+                            Address is required
+                        </mat-error>
+                    </mat-form-field>
+                </div>
 
-            <div fxLayout="column" fxFlex="0 0 47%">
-                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
-                    <mat-label>Consent : Y</mat-label>
-                    <input matInput>
-                </mat-form-field>
             </div>
+            <div fxLayout="row" fxLayoutAlign="space-between">
+                <div fxLayout="column" fxFlex="0 0 47%">
+                    <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                        <mat-label>Residential Address :</mat-label>
+                        <input matInput name="residentAddress" required formControlName="residentAddress"
+                            maxlength="64">
+                        <mat-error
+                            *ngIf="createNewUserForm.controls['residentAddress'].hasError('required') && ( createNewUserForm.controls['residentAddress'].dirty === true || registerSubmitted === true )">
+                            Residential address is required
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div fxLayout="column" fxFlex="0 0 47%">
+                    <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                        <mat-label>Flat no :</mat-label>
+                        <input matInput formControlName="flatNo">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="space-between">
+                <div fxLayout="column" fxFlex="0 0 47%">
+                    <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                        <mat-label>Street Name :</mat-label>
+                        <input matInput formControlName="streetName">
+                    </mat-form-field>
+                </div>
+                <div fxLayout="column" fxFlex="0 0 47%">
+                    <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                        <mat-label>Road no :</mat-label>
+                        <input matInput formControlName="roadNo" type="number">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="space-between">
+                <div fxLayout="column" fxFlex="0 0 47%">
+                    <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                        <mat-label>Area :</mat-label>
+                        <input matInput formControlName="area">
+                    </mat-form-field>
+                </div>
+                <div fxLayout="column" fxFlex="0 0 47%">
+                    <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                        <mat-label>Town :</mat-label>
+                        <input matInput name="town" required formControlName="town" maxlength="64">
+                        <mat-error
+                            *ngIf="createNewUserForm.controls['town'].hasError('required') && ( createNewUserForm.controls['town'].dirty === true || registerSubmitted === true )">
+                            Town is required
+                        </mat-error>
+                    </mat-form-field>
+                </div>
 
-            <div fxLayout="column" fxFlex="0 0 47%">
-                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
-                    <mat-label>Known by Other : Y/N</mat-label>
-                    <input matInput>
-                </mat-form-field>
             </div>
-        </div>
-        <div fxLayout="row" fxLayoutAlign="space-between">
-
-            <div fxLayout="column" fxFlex="0 0 47%">
-                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
-                    <mat-label>Other First Name :</mat-label>
-                    <input matInput>
-                </mat-form-field>
+            <div fxLayout="row" fxLayoutAlign="space-between">
+                <div fxLayout="column" fxFlex="0 0 47%">
+                    <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                        <mat-label>State :</mat-label>
+                        <input matInput name="state" required formControlName="state" maxlength="64">
+                        <mat-error
+                            *ngIf="createNewUserForm.controls['state'].hasError('required') && ( createNewUserForm.controls['state'].dirty === true || registerSubmitted === true )">
+                            State is required
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div fxLayout="column" fxFlex="0 0 47%">
+                    <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                        <mat-label>Country :</mat-label>
+                        <input matInput name="country" required formControlName="country" maxlength="64">
+                        <mat-error
+                            *ngIf="createNewUserForm.controls['country'].hasError('required') && ( createNewUserForm.controls['country'].dirty === true || registerSubmitted === true )">
+                            Country is required
+                        </mat-error>
+                    </mat-form-field>
+                </div>
             </div>
-            <div fxLayout="column" fxFlex="0 0 47%">
-                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
-                    <mat-label>Other Middle Name :</mat-label>
-                    <input matInput>
-                </mat-form-field>
+            <div fxLayout="row" fxLayoutAlign="center center">
+                <div fxLayout="row" fxFlex="0 0 30%" fxLayoutAlign="center">
+                    <button mat-raised-button type="submit" color="primary">Submit</button>
+                </div>
             </div>
-        </div>
-        <div fxLayout="row" fxLayoutAlign="space-between">
-            <div fxLayout="column" fxFlex="0 0 47%">
-                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
-                    <mat-label>Other Last Name : </mat-label>
-                    <input matInput>
-                </mat-form-field>
-            </div>
-            <div fxLayout="column" fxFlex="0 0 47%">
-                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
-                    <mat-label>Category Type : P</mat-label>
-                    <input matInput>
-                </mat-form-field>
-            </div>
-        </div>
-        <div fxLayout="row" fxLayoutAlign="space-between">
-
-            <div fxLayout="column" fxFlex="0 0 47%">
-                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
-                    <mat-label>Name as per Aadhar :</mat-label>
-                    <input matInput>
-                </mat-form-field>
-            </div>
-
-            <div fxLayout="column" fxFlex="0 0 47%">
-                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
-                    <mat-label>Aadhar No :</mat-label>
-                    <input matInput>
-                </mat-form-field>
-            </div>
-
-        </div>
-        <div fxLayout="row" fxLayoutAlign="space-between">
-            <div fxLayout="column" fxFlex="0 0 47%">
-                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
-                    <mat-label>Single Parent : Y/N</mat-label>
-                    <input matInput>
-                </mat-form-field>
-            </div>
-            <div fxLayout="column" fxFlex="0 0 47%">
-                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
-                    <mat-label>Father First Name: </mat-label>
-                    <input matInput>
-                </mat-form-field>
-            </div>
-        </div>
-        <div fxLayout="row" fxLayoutAlign="space-between">
-            <div fxLayout="column" fxFlex="0 0 47%">
-                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
-                    <mat-label>Father Midlle Name :</mat-label>
-                    <input matInput>
-                </mat-form-field>
-            </div>
-            <div fxLayout="column" fxFlex="0 0 47%">
-                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
-                    <mat-label>Father Last Name :</mat-label>
-                    <input matInput>
-                </mat-form-field>
-            </div>
-        </div>
-        <div fxLayout="row" fxLayoutAlign="space-between">
-
-            <div fxLayout="column" fxFlex="0 0 47%">
-                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
-                    <mat-label>Mother First Name :</mat-label>
-                    <input matInput>
-                </mat-form-field>
-            </div>
-            <div fxLayout="column" fxFlex="0 0 47%">
-                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
-                    <mat-label>Mother Middle Name :</mat-label>
-                    <input matInput>
-                </mat-form-field>
-            </div>
-        </div>
-        <div fxLayout="row" fxLayoutAlign="space-between">
-            <div fxLayout="column" fxFlex="0 0 47%">
-                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
-                    <mat-label>Mother Last Name :</mat-label>
-                    <input matInput>
-                </mat-form-field>
-            </div>
-            <div fxLayout="column" fxFlex="0 0 47%">
-                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
-                    <mat-label>ParentNamePrint : F/M</mat-label>
-                    <input matInput>
-                </mat-form-field>
-            </div>
-        </div>
-        <div fxLayout="row" fxLayoutAlign="space-between">
-            <div fxLayout="column" fxFlex="0 0 47%">
-                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
-                    <mat-label>Physical Pan Required : Y/N</mat-label>
-                    <input matInput>
-                </mat-form-field>
-            </div>
-            <div fxLayout="column" fxFlex="0 0 47%">
-                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
-                    <mat-label>Application Mode : K</mat-label>
-                    <input matInput>
-                </mat-form-field>
-            </div>
-        </div>
-        <!-- <div fxLayout="row" fxLayoutAlign="start">
-              <div fxLayout="column" fxFlex="0 0 47%">
-                  <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
-                      <mat-label>Phone Number</mat-label>
-                      <input matInput>
-                  </mat-form-field>
-              </div>
-          </div> -->
-        <div fxLayout="row" fxLayoutAlign="space-between">
-            <div fxLayout="column" fxFlex="0 0 47%">
-                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
-                    <mat-label>Telephone/Mobile no :</mat-label>
-                    <input matInput>
-                </mat-form-field>
-            </div>
-
-            <div fxLayout="column" fxFlex="0 0 47%">
-                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
-                    <mat-label>Email ID :</mat-label>
-                    <input matInput>
-                </mat-form-field>
-            </div>
-
-        </div>
-        <div fxLayout="row" fxLayoutAlign="space-between">
-            <div fxLayout="column" fxFlex="0 0 47%">
-                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
-                    <mat-label>Place : </mat-label>
-                    <input matInput>
-                </mat-form-field>
-            </div>
-            <div fxLayout="column" fxFlex="0 0 47%">
-                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
-                    <mat-label>Std Code :</mat-label>
-                    <input matInput>
-                </mat-form-field>
-            </div>
-        </div>
-        <div fxLayout="row" fxLayoutAlign="space-between">
-            <div fxLayout="column" fxFlex="0 0 47%">
-                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
-                    <mat-label>ISD Code :</mat-label>
-                    <input matInput>
-                </mat-form-field>
-            </div>
-            <div fxLayout="column" fxFlex="0 0 47%">
-                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
-                    <mat-label>Source of Income : Y/N</mat-label>
-                    <input matInput>
-                </mat-form-field>
-            </div>
-        </div>
-        <div fxLayout="row" fxLayoutAlign="space-between">
-            <div fxLayout="column" fxFlex="0 0 47%">
-                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
-                    <mat-label>Salary :</mat-label>
-                    <input matInput>
-                </mat-form-field>
-            </div>
-            <div fxLayout="column" fxFlex="0 0 47%">
-                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
-                    <mat-label>Other Source :</mat-label>
-                    <input matInput>
-                </mat-form-field>
-            </div>
-
-        </div>
-        <div fxLayout="row" fxLayoutAlign="space-between">
-            <div fxLayout="column" fxFlex="0 0 47%">
-                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
-                    <mat-label>Business proof :</mat-label>
-                    <input matInput>
-                </mat-form-field>
-            </div>
-            <div fxLayout="column" fxFlex="0 0 47%">
-                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
-                    <mat-label>Business proof Code :</mat-label>
-                    <input matInput>
-                </mat-form-field>
-            </div>
-        </div>
-        <div fxLayout="row" fxLayoutAlign="space-between">
-            <div fxLayout="column" fxFlex="0 0 47%">
-                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
-                    <mat-label>No Income : </mat-label>
-                    <input matInput>
-                </mat-form-field>
-            </div>
-            <div fxLayout="column" fxFlex="0 0 47%">
-                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
-                    <mat-label>Housepro :</mat-label>
-                    <input matInput>
-                </mat-form-field>
-            </div>
-
-        </div>
-        <div fxLayout="row" fxLayoutAlign="space-between">
-            <div fxLayout="column" fxFlex="0 0 47%">
-                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
-                    <mat-label>Captial Gains :</mat-label>
-                    <input matInput>
-                </mat-form-field>
-            </div>
-            <div fxLayout="column" fxFlex="0 0 47%">
-                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
-                    <mat-label>Address For Communication : R/O</mat-label>
-                    <input matInput>
-                </mat-form-field>
-            </div>
-
-        </div>
-        <div fxLayout="row" fxLayoutAlign="space-between">
-            <div fxLayout="column" fxFlex="0 0 47%">
-                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
-                    <mat-label>Residential Address :</mat-label>
-                    <input matInput>
-                </mat-form-field>
-            </div>
-            <div fxLayout="column" fxFlex="0 0 47%">
-                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
-                    <mat-label>Flat no :</mat-label>
-                    <input matInput>
-                </mat-form-field>
-            </div>
-        </div>
-        <div fxLayout="row" fxLayoutAlign="space-between">
-            <div fxLayout="column" fxFlex="0 0 47%">
-                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
-                    <mat-label>Street Name :</mat-label>
-                    <input matInput>
-                </mat-form-field>
-            </div>
-            <div fxLayout="column" fxFlex="0 0 47%">
-                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
-                    <mat-label>Road no :</mat-label>
-                    <input matInput>
-                </mat-form-field>
-            </div>
-        </div>
-        <div fxLayout="row" fxLayoutAlign="space-between">
-
-            <div fxLayout="column" fxFlex="0 0 47%">
-                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
-                    <mat-label>Area :</mat-label>
-                    <input matInput>
-                </mat-form-field>
-            </div>
-            <div fxLayout="column" fxFlex="0 0 47%">
-                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
-                    <mat-label>Town :</mat-label>
-                    <input matInput>
-                </mat-form-field>
-            </div>
-
-        </div>
-        <div fxLayout="row" fxLayoutAlign="space-between">
-            <div fxLayout="column" fxFlex="0 0 47%">
-                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
-                    <mat-label>State :</mat-label>
-                    <input matInput>
-                </mat-form-field>
-            </div>
-            <div fxLayout="column" fxFlex="0 0 47%">
-                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
-                    <mat-label>Country :</mat-label>
-                    <input matInput>
-                </mat-form-field>
-            </div>
-        </div>
-        <div fxLayout="row" fxLayoutAlign="center center">
-            <div fxLayout="row" fxFlex="0 0 30%" fxLayoutAlign="center">
-                <button mat-raised-button type="submit" color="primary">Submit</button>
-            </div>
-        </div>
+        </form>
     </mat-card-content>
 </mat-card>
