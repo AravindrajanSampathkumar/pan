@@ -11,7 +11,7 @@ import { AuthService } from '../service/auth.service';
 export class NewUserComponent implements OnInit, OnDestroy {
   createNewUserForm: any;
   registerSubmitted = false;
-  constructor(public authService: AuthService,private router: Router) { }
+  constructor(public authService: AuthService, private router: Router) { }
 
   ngOnInit() {
     this.createNewUserForm = new FormGroup({
@@ -39,9 +39,13 @@ export class NewUserComponent implements OnInit, OnDestroy {
     console.log('loginForm===============', this.createNewUserForm.value);
     console.log('registered')
   }
-  navigateBack(){
+
+  navigateBack() {
     this.router.navigate(['/dashboard']);
   }
+
+
+
   ngOnDestroy(): void {
     this.authService.userIsLoggedIn.next(false);
   }

@@ -1,16 +1,20 @@
 <mat-toolbar color="primary">
-  <mat-toolbar-row>
-    <mat-icon (click)="navigateBack()">arrow_back_ios</mat-icon>
-    <span>Create new user</span>
-    <span class="example-spacer"></span>
-    <!-- <span class="labl-one lable-padding">Agent code : 10101</span>
+    <mat-toolbar-row>
+        <mat-icon (click)="navigateBack()">arrow_back_ios</mat-icon>
+        <span>Create new user</span>
+        <span class="example-spacer"></span>
+        <!-- <span class="labl-one lable-padding">Agent code : 10101</span>
     <span class="labl-two lable-padding">Agent Name : Aravind</span>
     <span class="labl-three lable-padding">Login Time : {{timer}}</span> -->
 
-  </mat-toolbar-row>
+    </mat-toolbar-row>
 </mat-toolbar>
 
-<mat-card class="my-card">
+<div class="header">
+    <h1>New Pan Creation</h1>
+</div>
+
+<!-- <mat-card class="my-card">
   <mat-card-content>
      <form class="my-form container" [formGroup]="createNewUserForm" (ngSubmit)="register()">
         <mat-form-field class="full-width">
@@ -112,5 +116,383 @@
      </form>
 
   </mat-card-content>
-</mat-card>
+</mat-card> -->
 
+<mat-card class="createUser-card">
+    <mat-card-content>
+        <div fxLayout="row" fxLayoutAlign="space-between">
+            <div fxLayout="column" fxFlex="0 0 47%">
+                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                    <mat-label>Application Type: 49A</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+            <div fxLayout="column" fxFlex="0 0 47%">
+                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                    <mat-label>Title : Shri/Smt/Kumari</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+        </div>
+        <!-- <div fxLayout="row" fxLayoutAlign="start">
+          <div fxLayout="column" fxFlex="0 0 47%">
+              <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                  <mat-label>Phone Number</mat-label>
+                  <input matInput>
+              </mat-form-field>
+          </div>
+      </div> -->
+        <div fxLayout="row" fxLayoutAlign="space-between">
+
+            <div fxLayout="column" fxFlex="0 0 47%">
+                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                    <mat-label>First Name:</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+
+            <div fxLayout="column" fxFlex="0 0 47%">
+                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                    <mat-label>Middle Name:</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-between">
+
+            <div fxLayout="column" fxFlex="0 0 47%">
+                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                    <mat-label>Last Name:</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+            <div fxLayout="column" fxFlex="0 0 47%">
+                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                    <mat-label>Gender :</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-between">
+            <div fxLayout="column" fxFlex="0 0 47%">
+                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                    <mat-label>DOB :</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+            <div fxLayout="column" fxFlex="0 0 47%">
+                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                    <mat-label>Name on Pan</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-between">
+
+            <div fxLayout="column" fxFlex="0 0 47%">
+                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                    <mat-label>Consent : Y</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+
+            <div fxLayout="column" fxFlex="0 0 47%">
+                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                    <mat-label>Known by Other : Y/N</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-between">
+
+            <div fxLayout="column" fxFlex="0 0 47%">
+                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                    <mat-label>Other First Name :</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+            <div fxLayout="column" fxFlex="0 0 47%">
+                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                    <mat-label>Other Middle Name :</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-between">
+            <div fxLayout="column" fxFlex="0 0 47%">
+                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                    <mat-label>Other Last Name : </mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+            <div fxLayout="column" fxFlex="0 0 47%">
+                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                    <mat-label>Category Type : P</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-between">
+
+            <div fxLayout="column" fxFlex="0 0 47%">
+                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                    <mat-label>Name as per Aadhar :</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+
+            <div fxLayout="column" fxFlex="0 0 47%">
+                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                    <mat-label>Aadhar No :</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-between">
+            <div fxLayout="column" fxFlex="0 0 47%">
+                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                    <mat-label>Single Parent : Y/N</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+            <div fxLayout="column" fxFlex="0 0 47%">
+                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                    <mat-label>Father First Name: </mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-between">
+            <div fxLayout="column" fxFlex="0 0 47%">
+                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                    <mat-label>Father Midlle Name :</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+            <div fxLayout="column" fxFlex="0 0 47%">
+                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                    <mat-label>Father Last Name :</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-between">
+
+            <div fxLayout="column" fxFlex="0 0 47%">
+                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                    <mat-label>Mother First Name :</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+            <div fxLayout="column" fxFlex="0 0 47%">
+                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                    <mat-label>Mother Middle Name :</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-between">
+            <div fxLayout="column" fxFlex="0 0 47%">
+                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                    <mat-label>Mother Last Name :</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+            <div fxLayout="column" fxFlex="0 0 47%">
+                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                    <mat-label>ParentNamePrint : F/M</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-between">
+            <div fxLayout="column" fxFlex="0 0 47%">
+                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                    <mat-label>Physical Pan Required : Y/N</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+            <div fxLayout="column" fxFlex="0 0 47%">
+                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                    <mat-label>Application Mode : K</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+        </div>
+        <!-- <div fxLayout="row" fxLayoutAlign="start">
+              <div fxLayout="column" fxFlex="0 0 47%">
+                  <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                      <mat-label>Phone Number</mat-label>
+                      <input matInput>
+                  </mat-form-field>
+              </div>
+          </div> -->
+        <div fxLayout="row" fxLayoutAlign="space-between">
+            <div fxLayout="column" fxFlex="0 0 47%">
+                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                    <mat-label>Telephone/Mobile no :</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+
+            <div fxLayout="column" fxFlex="0 0 47%">
+                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                    <mat-label>Email ID :</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-between">
+            <div fxLayout="column" fxFlex="0 0 47%">
+                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                    <mat-label>Place : </mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+            <div fxLayout="column" fxFlex="0 0 47%">
+                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                    <mat-label>Std Code :</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-between">
+            <div fxLayout="column" fxFlex="0 0 47%">
+                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                    <mat-label>ISD Code :</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+            <div fxLayout="column" fxFlex="0 0 47%">
+                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                    <mat-label>Source of Income : Y/N</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-between">
+            <div fxLayout="column" fxFlex="0 0 47%">
+                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                    <mat-label>Salary :</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+            <div fxLayout="column" fxFlex="0 0 47%">
+                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                    <mat-label>Other Source :</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-between">
+            <div fxLayout="column" fxFlex="0 0 47%">
+                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                    <mat-label>Business proof :</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+            <div fxLayout="column" fxFlex="0 0 47%">
+                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                    <mat-label>Business proof Code :</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-between">
+            <div fxLayout="column" fxFlex="0 0 47%">
+                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                    <mat-label>No Income : </mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+            <div fxLayout="column" fxFlex="0 0 47%">
+                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                    <mat-label>Housepro :</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-between">
+            <div fxLayout="column" fxFlex="0 0 47%">
+                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                    <mat-label>Captial Gains :</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+            <div fxLayout="column" fxFlex="0 0 47%">
+                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                    <mat-label>Address For Communication : R/O</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-between">
+            <div fxLayout="column" fxFlex="0 0 47%">
+                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                    <mat-label>Residential Address :</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+            <div fxLayout="column" fxFlex="0 0 47%">
+                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                    <mat-label>Flat no :</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-between">
+            <div fxLayout="column" fxFlex="0 0 47%">
+                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                    <mat-label>Street Name :</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+            <div fxLayout="column" fxFlex="0 0 47%">
+                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                    <mat-label>Road no :</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-between">
+
+            <div fxLayout="column" fxFlex="0 0 47%">
+                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                    <mat-label>Area :</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+            <div fxLayout="column" fxFlex="0 0 47%">
+                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                    <mat-label>Town :</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-between">
+            <div fxLayout="column" fxFlex="0 0 47%">
+                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                    <mat-label>State :</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+            <div fxLayout="column" fxFlex="0 0 47%">
+                <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
+                    <mat-label>Country :</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="center center">
+            <div fxLayout="row" fxFlex="0 0 30%" fxLayoutAlign="center">
+                <button mat-raised-button type="submit" color="primary">Submit</button>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>
