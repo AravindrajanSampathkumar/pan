@@ -36,6 +36,10 @@ export class NewUserComponent implements OnInit, OnDestroy {
     { name: 'Smt', value: 'smt' },
     { name: 'Kumari', value: 'kumari' }
   ]
+  consents = [
+    { name: 'Yes', value: 'yes' },
+    { name: 'No', value: 'no' },
+  ];
   constructor(public authService: AuthService, private router: Router) { }
 
   ngOnInit() {
@@ -96,7 +100,8 @@ export class NewUserComponent implements OnInit, OnDestroy {
     this.registerSubmitted = true;
     let valid = this.checkValidForm(this.createNewUserForm.value)
     if (valid) {
-      this.router.navigate(['/dashboard']);
+      // this.router.navigate(['/dashboard']);
+      this.createNewUserForm.disable();
     } else {
       return;
     }

@@ -113,10 +113,15 @@
                 <div fxLayout="column" fxFlex="0 0 47%">
                     <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
                         <mat-label>Consent : Y</mat-label>
-                        <input matInput name="consent" required formControlName="consent" maxlength="64">
+                        <mat-select formControlName="consent" required>
+                            <mat-option>Select</mat-option>
+                            <mat-option *ngFor="let value of consents" [value]="value.value">
+                                {{value.name}}
+                            </mat-option>
+                        </mat-select>
                         <mat-error
                             *ngIf="createNewUserForm.controls['consent'].hasError('required') && ( createNewUserForm.controls['consent'].dirty === true || registerSubmitted === true )">
-                            Consent is required
+                            Please select the consent
                         </mat-error>
                     </mat-form-field>
                 </div>
@@ -186,7 +191,7 @@
                             minlength="12">
                         <mat-error
                             *ngIf="createNewUserForm.controls['aadharNum'].hasError('required') && ( createNewUserForm.controls['aadharNum'].dirty === true || registerSubmitted === true )">
-                            Aadhar name is required
+                            Aadhar number is required
                         </mat-error>
                     </mat-form-field>
                 </div>
@@ -235,7 +240,7 @@
             <div fxLayout="row" fxLayoutAlign="space-between">
                 <div fxLayout="column" fxFlex="0 0 47%">
                     <mat-form-field class="full-width" appearance="fill" style="margin-top: 20px;">
-                        <mat-label>Mother First Name Name:</mat-label>
+                        <mat-label>Mother First Name:</mat-label>
                         <input matInput name="mFname" required formControlName="mFname" maxlength="64">
                         <mat-error
                             *ngIf="createNewUserForm.controls['mFname'].hasError('required') && ( createNewUserForm.controls['mFname'].dirty === true || registerSubmitted === true )">

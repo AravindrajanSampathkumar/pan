@@ -2,7 +2,7 @@
    <mat-icon (click)="navigateBack()">arrow_back_ios</mat-icon>
    <span>Registration</span>
 </mat-toolbar>
-<mat-card class="my-card">
+<!-- <mat-card class="my-card">
    <mat-card-content>
       <form class="my-form container" [formGroup]="registerForm" (ngSubmit)="register()">
          <mat-form-field class="full-width">
@@ -103,5 +103,37 @@
          </mat-card-actions>         
       </form>
 
+   </mat-card-content>
+</mat-card> -->
+
+
+<mat-card class="my-card">
+   <div class="mat-typography">
+      <mat-card-title>Registration
+         <span class="material-symbols-outlined">
+            app_registration
+         </span>
+      </mat-card-title>
+    </div>
+   <div *ngIf="status!=null&&registration==false" style="color: red;">Registration Status : {{status}}</div>
+   <div *ngIf="status!=null&&registration==true" style="color: green;">Registration Status : {{status}}</div>
+   <mat-card-content>
+      <form class="my-form" [formGroup]="registerForm" (ngSubmit)="register()">
+         <mat-form-field class="full-width">
+            <mat-label>User Name</mat-label>
+            <input matInput placeholder="First name" name="username" required formControlName="username">
+         </mat-form-field>
+         <mat-form-field class="full-width">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Email" name="email" formControlName="email">
+         </mat-form-field>
+         <mat-form-field class="full-width">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" placeholder="Password" name="password" formControlName="password">
+         </mat-form-field>
+         <mat-card-actions>
+            <button mat-raised-button type="submit" color="primary">REGISTER</button>
+         </mat-card-actions>
+      </form>
    </mat-card-content>
 </mat-card>
