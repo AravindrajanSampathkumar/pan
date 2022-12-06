@@ -8,11 +8,13 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthService } from './service/auth.service';
 import { FormatTimePipe } from './pipes/formatTime.pipe';
 import { AngularMaterialModule } from './angular-material.module';
+import { LoginComponent } from './login/login.component';
 @NgModule({
-  declarations: [
+  declarations: [	
     AppComponent,
-    FormatTimePipe
-  ],
+    FormatTimePipe,
+      LoginComponent
+   ],
   imports: [
     BrowserModule,
     CommonModule,

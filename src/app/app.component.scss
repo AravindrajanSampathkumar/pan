@@ -1,31 +1,15 @@
-.example-spacer {
-    flex: 1 1 auto;
-}
-
-.header-bar {
-    margin: 0px;
-}
-
-.lable {
-    font-size: 20px;
-}
-
-.example-icon {
-    margin-right: 25px;
-}
-
 .spacer {
     flex: 1 1 auto;
 }
 
-mat-form-field {
-    width: 100%;
+:host {
+    ::ng-deep {
+        .mat-form-field{
+            line-height: inherit;
+        }
+    }
 }
-
-mat-card-actions {
-    text-align: center;
-}
-
-.content {
-    margin-top: 30px;
+.spaceBrk{
+    padding-top: 1px;
+    height: 100%;
 }
